@@ -66,12 +66,12 @@ class App extends Component {
             />
             <ProtectedRoute
               exact
-              path="/businesses"
+              path="/item"
               component={BusinessPage}
             />
             <ProtectedRoute
               exact
-              path="/add business"
+              path="/form"
               component={AddBusiness}
             />
 

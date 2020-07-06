@@ -9,7 +9,8 @@ const AboutPage = () => (
   <div>
     <div>
       <p>
-        This about page is for anyone to read!
+        The greenbook application is a designation where black and brown people can go and create an account to access tons of local businesses. It is focused on creating opportunities for entrepreneurs to showcase their skills, services and products. With that I hope to encourage business and consumer engagement with these entrepreneurs -
+        in an effort to create a greater sense of togetherness for our business communities.
       </p>
     </div>
   </div>

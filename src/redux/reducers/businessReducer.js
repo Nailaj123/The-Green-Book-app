@@ -1,5 +1,4 @@
-
-const business = (state = [], action) => {
+const details = (state = [], action) => {
     switch (action.type) {
         case 'SET_BUSINESS':
             return action.payload;
@@ -8,4 +7,4 @@ const business = (state = [], action) => {
     }
 }
 
-export default business;
+export default details;

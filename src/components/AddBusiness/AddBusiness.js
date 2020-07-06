@@ -7,7 +7,8 @@ class AddBusiness extends Component {
         newBusiness: {
             name: '',
             description: '',
-            image: ''
+            image: '',
+            website: ''
         },
         // newBusiness: {
         //     street: '',
@@ -16,24 +17,12 @@ class AddBusiness extends Component {
         //     zip: '',
         // },
 
-        newBusinessAddress: {
-            name: '',
-            description: '',
-            street: '',
-            city: '',
-            state: '',
-            zip: '',
-        },
-
 
         finalObject: {
             name: '',
             description: '',
-            street: '',
-            city: '',
-            state: '',
-            zip: '',
-            image: ''
+            image: '',
+            website: ''
         }
 
     }
@@ -60,11 +49,8 @@ class AddBusiness extends Component {
             finalObject: {
                 name: 'One Fermentary & Taproom',
                 description: 'ONE Fermentary & Taproom is a brewpub offering our own craft beers in concert with collaboration beers, guest beers, fine wines (sourced by Libation Project) and custom-designed spirits (crafted in collaboration with Tattersall Distilling)',
-                street: '(612) 353-4729',
-                city: 'Minneapolis',
-                state: 'MN',
-                zip: '55401',
-                image: ''
+                image: 'public/download-1.png',
+                website: 'https://fermentary.one/'
             }
         });
     }
@@ -81,21 +67,8 @@ class AddBusiness extends Component {
                     <label for="description">Description:</label><br />
                     <input type="text" value={this.state.finalObject.description} /><br />
 
-
-                    <label for="street">Street:</label><br />
-                    <input type="text" value={this.state.finalObject.street} /><br />
-
-
-                    <label for="city">City:</label><br />
-                    <input type="text" value={this.state.finalObject.city} /><br />
-
-
-                    <label for="state">State:</label><br />
-                    <input type="text" value={this.state.finalObject.state} /><br />
-
-
-                    <label for="zip">Zip:</label><br />
-                    <input type="text" value={this.state.finalObject.zip} /><br />
+                    <label for="website">Website:</label><br />
+                    <input type="text" value={this.state.finalObject.website} /><br />
 
                     <label for="zip">Image:</label><br />
                     <input type="text" value={this.state.finalObject.image} /><br />
