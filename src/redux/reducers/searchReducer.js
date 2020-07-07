@@ -1,10 +1,10 @@
-const details = (state = [], action) => {
+const searchReducer = (state = [], action) => {
     switch (action.type) {
-        case 'SET_BUSINESS':
+        case "GET_LIST":
             return action.payload;
         default:
             return state;
     }
-}
+};
 
-export default details;
+export default searchReducer;

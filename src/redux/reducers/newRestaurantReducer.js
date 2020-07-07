@@ -1,4 +1,4 @@
-const addBusinessReducer = (state = [], action) => {
+const newRestaurantReducer = (state = [], action) => {
     switch (action.type) {
         case 'ADD_TO_LIST':
             return [...state, action.payload]
@@ -7,6 +7,4 @@ const addBusinessReducer = (state = [], action) => {
     }
 };
 
-
-
-export default addBusinessReducer;
+export default newRestaurantReducer;

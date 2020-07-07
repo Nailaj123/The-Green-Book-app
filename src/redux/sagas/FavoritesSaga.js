@@ -4,7 +4,7 @@ import { put, takeEvery } from 'redux-saga/effects';
 function* fetchFavorites(action) {
     const response = yield axios.get('/favorites');
     console.log("in fetchList", response);
-    yield put({ type: 'SET_FAVORITES', payload: response.data });
+    yield put({ type: 'SET_FAVORITE', payload: response.data });
     console.log('favoriteList', response.data)
 
 }

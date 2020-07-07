@@ -1,4 +1,3 @@
-
 const express = require('express');
 require('dotenv').config();
 
@@ -10,11 +9,12 @@ const passport = require('./strategies/user.strategy');
 
 // Route includes
 const userRouter = require('./routes/user.router');
-const AddBusinessRouter = require('./routes/AddBusiness.router');
-const FavoritesRouter = require('./routes/favorites.router');
-const BusinessPageRouter = require('./routes/BusinessPage.router')
+const searchRouter = require('./routes/search.router');
+const favoritesRouter = require('./routes/favorites.router');
+const newRestaurantRouter = require('./routes/newrestaurant.router');
+const selectRouter = require('./routes/restaurant.item.router');
 
-//const selectRouter = require('./routes/BusinessPage.router');
+
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -29,11 +29,10 @@ app.use(passport.session());
 
 /* Routes */
 app.use('/api/user', userRouter);
-app.use('/api/businesses', BusinessPageRouter);
-app.use('/api/favorites', FavoritesRouter);
-app.use('/api/AddBusiness', AddBusinessRouter);
-//app.use('/select', selectRouter);
-
+app.use('/search', searchRouter);
+app.use('/favorites', favoritesRouter);
+app.use('/form', newRestaurantRouter);
+app.use('/select', selectRouter);
 
 // Serve static files
 app.use(express.static('build'));

@@ -2,9 +2,11 @@ import { all } from 'redux-saga/effects';
 import loginSaga from './loginSaga';
 import registrationSaga from './registrationSaga';
 import userSaga from './userSaga';
-import BusinessPageSaga from './BusinessPageSaga'
-import AddBusinessSaga from './AddBusinessSaga';
-import FavoritesSaga from './FavoritesSaga';
+import searchSaga from './searchSaga';
+import RestaurantItemSaga from './RestaurantItemSaga';
+import favoritesSaga from './favoritesSaga';
+import newRestaurantSaga from './newRestaurantSaga';
+
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -18,8 +20,9 @@ export default function* rootSaga() {
     loginSaga(),
     registrationSaga(),
     userSaga(),
-    AddBusinessSaga(),
-    BusinessPageSaga(),
-    FavoritesSaga(),
+    searchSaga(),
+    RestaurantItemSaga(),
+    favoritesSaga(),
+    newRestaurantSaga(),
   ]);
 }
