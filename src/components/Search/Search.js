@@ -67,7 +67,7 @@ class Search extends Component {
         return (
             <div class='body'>
                 <div class='results'>
-                    Search for halal restaurants in your city!
+                    Search for restaurants in your city!
       <br />
                     <input
                         type="text"
