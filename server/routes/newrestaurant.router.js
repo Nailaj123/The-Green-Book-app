@@ -22,15 +22,6 @@ router.post('/', (req, res) => {
         });
 });
 
-pool.query(queryText, queryValues)
-    .then(() => {
-        res.sendStatus(201);
-    })
-    .catch((err) => {
-        console.log('Error completing insert restaurant query', err);
-        console.log(newRestaurant.name)
-        res.sendStatus(500);
-    });
 
 
 module.exports = router;
