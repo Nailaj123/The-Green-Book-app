@@ -14,8 +14,7 @@ class RestaurantItem extends Component {
                             <div key={item.id}>
                                 <p> {item.name}</p>
                                 <img height='200px' width='200px' src={item.image}></img>
-                                <p> {item.description}</p>
-                                <p> {item.street}, {item.city} {item.state} {item.zip}</p>
+                                <p> {item.description},{item.website}</p>
                             </div>
                         )
                     })}

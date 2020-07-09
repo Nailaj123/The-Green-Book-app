@@ -9,10 +9,6 @@ class Search extends Component {
         edit: {
             name: '',
             description: '',
-            street: '',
-            city: '',
-            state: '',
-            zip: '',
             editable: false
         }
     }
@@ -67,12 +63,12 @@ class Search extends Component {
         return (
             <div class='body'>
                 <div class='results'>
-                    Search for halal restaurants in your city!
-      <br />
+                    Search black and brown owned businesses!
+                    <br />
                     <input
                         type="text"
                         onChange={this.trackSearchInput}
-                        placeholder="zip, city"
+                        placeholder="restaurants salons"
                         value={this.state.searchInput}
                     />
                     <button onClick={this.search}>Search</button>

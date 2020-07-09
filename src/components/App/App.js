@@ -14,7 +14,7 @@ import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 
 import AboutPage from '../AboutPage/AboutPage';
-import UserPage from '../UserPage/UserPage';
+//import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
 import Favorites from '../Favorites/Favorites';
 import RestaurantItem from '../RestaurantItem/RestaurantItem';
@@ -53,14 +53,14 @@ class App extends Component {
               path="/item"
               component={RestaurantItem}
             />
-             />
-              <ProtectedRoute
+
+            <ProtectedRoute
               exact
               path="/search"
               component={Search}
             />
-              />
-              <ProtectedRoute
+
+            <ProtectedRoute
               exact
               path="/form"
               component={NewRestaurantForm}

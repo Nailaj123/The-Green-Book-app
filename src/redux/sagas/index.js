@@ -4,7 +4,7 @@ import registrationSaga from './registrationSaga';
 import userSaga from './userSaga';
 import searchSaga from './searchSaga';
 import RestaurantItemSaga from './RestaurantItemSaga';
-import favoritesSaga from './favoritesSaga';
+import FavoritesSaga from './FavoritesSaga';
 import newRestaurantSaga from './newRestaurantSaga';
 
 
@@ -22,7 +22,7 @@ export default function* rootSaga() {
     userSaga(),
     searchSaga(),
     RestaurantItemSaga(),
-    favoritesSaga(),
+    FavoritesSaga(),
     newRestaurantSaga(),
   ]);
 }

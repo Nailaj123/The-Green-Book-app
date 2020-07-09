@@ -2,42 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class NewRestaurantForm extends Component {
-
-
-
     state = {
         newRestaurant: {
             name: '',
             description: '',
-            image: ''
-        },
-        newRestaurant: {
-            street: '',
-            city: '',
-            state: '',
-            zip: '',
-        },
-
-        newRestaurantAddress: {
-            name: '',
-            description: '',
-            street: '',
-            city: '',
-            state: '',
-            zip: '',
-        },
-
-
-        finalObject: {
-            name: '',
-            description: '',
-            street: '',
-            city: '',
-            state: '',
-            zip: '',
-            image: ''
+            website: '',
+            image: '',
+            tags: []
         }
-
     }
 
 
@@ -51,66 +23,63 @@ class NewRestaurantForm extends Component {
 
     addRestaurant = (event) => {
         event.preventDefault()
-
-        this.props.dispatch({ type: 'ADD_TO_LIST', payload: this.state.finalObject })
-
-
+        this.props.dispatch({ type: 'ADD_TO_LIST', payload: this.state });
+        // this.props.history.push
     }
 
 
-    populateInputs = () => {
+
+    handleInput = (event, type) => {
         this.setState({
-            finalObject: {
-                name: '',
-                description: '',
-                street: '',
-                city: '',
-                state: '',
-                zip: '',
-                image: ''
-            }
-        });
+            [type]: event.target.value
+        })
     }
-
-
+    updateTag = (event) => {
+        let tagArray = this.state.tags;
+        if (tagArray.includes(event.target.value)) {
+            //if in tagArray, take it out
+            let indexToSpliceOut = tagArray.indexOf(event.target.value);
+            tagArray.splice(indexToSpliceOut, 1);
+            this.setState({
+                tags: tagArray
+            })
+        }
+        else {
+            //if not in tagArray, add it
+            this.setState({
+                tags: [...this.state.tags, event.target.value]
+            })
+        }
+    }
 
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.addRestaurant}>
                     <input type="submit" onClick={this.populateInputs} />
                     <br />
                     <label for="name">Name:</label><br />
-                    <input type="text" value={this.state.finalObject.name} /><br />
+                    <input type="text" value={this.state.name} onChange={(event) => this.handleInput(event, 'name')} /><br />
 
                     <label for="description">Description:</label><br />
-                    <input type="text" value={this.state.finalObject.description} /><br />
+                    <input type="text" value={this.state.description} onChange={(event) => this.handleInput(event, 'description')} /><br />
 
 
-                    <label for="street">Street:</label><br />
-                    <input type="text" value={this.state.finalObject.street} /><br />
+                    <label for="website">website:</label><br />
+                    <input type="text" value={this.state.website} onChange={(event) => this.handleInput(event, 'website')} /><br />
 
-
-                    <label for="city">City:</label><br />
-                    <input type="text" value={this.state.finalObject.city} /><br />
-
-
-                    <label for="state">State:</label><br />
-                    <input type="text" value={this.state.finalObject.state} /><br />
-
-
-                    <label for="zip">Zip:</label><br />
-                    <input type="text" value={this.state.finalObject.zip} /><br />
 
                     <label for="zip">Image:</label><br />
-                    <input type="text" value={this.state.finalObject.image} /><br />
+                    <input type="text" value={this.state.image} /><br />
                     <input type="submit" onClick={this.addRestaurant} />
                 </form>
             </div>
         );
     }
+
 }
 
 
 
-export default connect()(NewRestaurantForm);
+
+export default connect()(NewRestaurantForm)
