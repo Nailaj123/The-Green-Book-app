@@ -14,8 +14,6 @@ const favoritesRouter = require('./routes/favorites.router');
 const newRestaurantRouter = require('./routes/newrestaurant.router');
 const selectRouter = require('./routes/restaurant.item.router');
 
-
-
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

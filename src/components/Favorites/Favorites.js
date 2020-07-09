@@ -8,6 +8,11 @@ import { withRouter } from 'react-router-dom';
 
 class Favorites extends Component {
 
+    state = {
+        favorite: ""
+    };
+
+
     componentDidMount() {
         this.getFavorites();
     }

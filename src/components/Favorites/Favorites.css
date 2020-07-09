@@ -1,5 +1,5 @@
 div.list {
-    background-color: rgb(243, 233, 233);
+    background-color:yellow (243, 233, 233);
     height: 600px;
     width: 600px;
     overflow-y: scroll;
@@ -8,7 +8,7 @@ div.list {
 }
 
 div.body{
-    background-color:rgb(243, 233, 233);
+    background-color:yellow (243, 233, 233);
     text-align: center;
 }
 
