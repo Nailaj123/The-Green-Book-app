@@ -22,8 +22,8 @@ router.get('/', (req, res) => {
     const user = req.user.id
     console.log('user', req.user);
     if (req.isAuthenticated()) {
-        let queryText = `SELECT restaurants.id, restaurants.name, restaurants.description, restaurants.image, favorites.visited FROM restaurants
-    JOIN favorites ON favorites.restaurant_id = restaurants.id
+        let queryText = `SELECT businesses.id, businesses.name, businesses.description, businesses.image, favorites.visited FROM businesses
+    JOIN favorites ON favorites.business_id = businesses.id
     JOIN "user" ON favorites.user_id = "user".id where favorites.user_id=$1`;
         pool.query(queryText, [user])
             .then(results => res.send(results.rows))
@@ -41,7 +41,7 @@ router.post("/", (req, res) => {
     console.log('from favorite POST', req.body.id);
     console.log('from favorite POST user', req.body.user);
     if (req.isAuthenticated()) {
-        let queryText = 'INSERT INTO "favorites" (user_id, restaurant_id) VALUES ($1, $2)';
+        let queryText = 'INSERT INTO "favorites" (user_id, business_id) VALUES ($1, $2)';
         // console.log('in post addfavorite', newFavorite )
         pool.query(queryText, [user, newFavorite])
             .then(() => {
@@ -57,7 +57,7 @@ router.put('/:id', (req, res) => {
     console.log('params', req.params.id)
     const visit = req.body.visit
     const reqId = req.params.id
-    const queryText = `UPDATE "favorites" SET "visited" = $1 WHERE "restaurant_id" = $2`;
+    const queryText = `UPDATE "favorites" SET "visited" = $1 WHERE "business_id" = $2`;
     pool.query(queryText[visit, reqId]).then((result) => {
         res.sendStatus(200);
     }).catch((error) => {
@@ -69,7 +69,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     let reqId = req.params.id;
     console.log('Delete request for id', reqId);
-    let queryText = `DELETE FROM favorites where restaurant_id = $1`;
+    let queryText = `DELETE FROM favorites where business_id = $1`;
     pool.query(queryText, [reqId])
         .then((result) => {
             console.log('Item deleted');

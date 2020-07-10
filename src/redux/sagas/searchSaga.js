@@ -6,7 +6,23 @@ function* fetchList(action) {
     console.log("in fetchList", searchResults);
     console.log("payload", searchResults.data);
 
-    yield put({ type: "GET_LIST", payload: searchResults.data });
+    const filteredData = searchResults.data.filter(search => filterSearchResults(search, action.payload))
+
+
+
+    yield put({ type: "GET_LIST", payload: filteredData });
+}
+
+function filterSearchResults(search, searchWord) {
+    if (search.description.search(searchWord) !== -1) {
+        return true
+    } else if (search.name.search(searchWord) !== -1) {
+        return true
+    } else if (search.type.search(searchWord) !== -1) {
+        return true
+    }
+
+    return false
 }
 
 function* deleteRestaurant(action) {

@@ -54,10 +54,10 @@ class Search extends Component {
         })
     }
 
-    add = () => {
+    addToNewRestaurant = () => {
         this.props.history.push('/form');
-    }
 
+    }
 
     render(props) {
         return (
@@ -73,22 +73,24 @@ class Search extends Component {
                     />
                     <button onClick={this.search}>Search</button>
                     <ul>
-                        {this.props.search.map(restaurant => (
-                            <li key={restaurant.id}>
-                                <button class='imagebtn' onClick={() => this.handleClick(restaurant.id)}><img height='200px' height='200px' src={restaurant.image} /></button>
+                        {this.props.search.map(businesses => (
+                            <li key={businesses.id}>
+                                <button class='imagebtn' onClick={() => this.handleClick(businesses.id)}><img height='200px' height='200px' src={businesses.image} /></button>
                                 <br />
-                                {restaurant.name}
+                                {businesses.name}
                                 <br />
-                                {restaurant.description}
+                                {businesses.description}
                                 <br />
-                                <button class='favorite' onClick={() => this.handleClick1(restaurant.id)}>Favorite</button>
-
-
+                                {businesses.website}
+                                <br />
+                                <button class='favorite' onClick={() => this.handleClick1(businesses.id)}>Favorite</button>
                             </li>
                         ))}
                     </ul>
 
+
                 </div>
+
             </div>
         );
     }

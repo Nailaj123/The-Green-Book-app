@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     console.log('req.user:', req.user);
     console.log('is authenticated?', req.isAuthenticated());
     if (req.isAuthenticated()) {
-        let queryText = 'select * from restaurants'
+        let queryText = 'select * from businesses'
         pool.query(queryText)
             .then(results => res.send(results.rows))
             .catch(error => {

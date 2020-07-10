@@ -61,11 +61,9 @@ class Favorites extends Component {
                                     <br />
                                     {listItem.description}
                                     <br />
-                                    {listItem.visited === true &&
-                                        <button onClick={() => this.updateVisitStatus(listItem.id, 'false')}>Visited</button>
-                                    }
+
                                     {listItem.visited === false &&
-                                        <button onClick={() => this.updateVisitStatus(listItem.id, 'true')}>Visit</button>
+                                        <button onClick={() => this.updateVisitStatus(listItem.id, 'true')}>Review</button>
                                     }
                                     <button onClick={() => this.deleteFavorite(listItem.id)}>unfavorite</button>
                                 </li>

@@ -3,25 +3,15 @@ import { connect } from 'react-redux';
 
 class NewRestaurantForm extends Component {
     state = {
-        newRestaurant: {
-            name: '',
-            description: '',
-            website: '',
-            image: '',
-            owner: '',
-            type: '',
-            email: '',
-
-        }
-    }
+        name: '',
+        description: '',
+        website: '',
+        image: '',
+        owner: '',
+        type: '',
+        email: '',
 
 
-    handleChange = (event, typeOf) => {
-        console.log(event.target.value, typeOf);
-        this.setState({
-            [typeOf]: event.target.value,
-
-        })
     }
 
     addRestaurant = (event) => {
@@ -30,81 +20,57 @@ class NewRestaurantForm extends Component {
         // this.props.history.push
     }
 
-
-
-    handleInput = (event, type) => {
+    handleInput = (event) => {
         this.setState({
-            [type]: event.target.value
+            [event.target.name]: event.target.value
         })
     }
-    // handleClickOutside() {
-    //     this.setState({
-    //         listOpen: false
-    //     })
-    // }
-    // toggleList() {
-    //     this.setState(prevState => ({
-    //         listOpen: !prevState.listOpen
-    //     }))
-    // }
-    // render() {
-    //     const { list } = this.props
-    //     const { listOpen, headerTitle } = this.state
-    //     return (
-    //         <div className="dd-wrapper">
-    //             <div className="dd-header" onClick={() => this.toggleList()}>
-    //                 <div className="dd-header-title">{headerTitle}</div>
-    //                 {listOpen
-    //                     ? <FontAwesome name="angle-up" size="2x" />
-    //                     : <FontAwesome name="angle-down" size="2x" />
-    //                 }
-    //             </div>
-    //             {listOpen && <ul className="dd-list">
-    //                 {list.map((item) => (
-    //                     <li className="dd-list-item" key={item.id} >{item.title}</li>
-    //                 ))}
-    //             </ul>}
-    //         </div>
-    //     )
-    // }
 
     render() {
         return (
             <div>
                 <form onSubmit={this.addRestaurant}>
-                    <input type="submit" onClick={this.populateInputs} />
                     <br />
                     <label for="name">Business Name:</label><br />
-                    <input type="text" value={this.state.name} onChange={(event) => this.handleInput(event, 'name')} /><br />
+                    <input name="name" type="text" value={this.state.name} onChange={this.handleInput} required /><br />
 
                     <label for="description">Description:</label><br />
-                    <input type="text" value={this.state.description} onChange={(event) => this.handleInput(event, 'description')} /><br />
+                    <textarea name="description" type="text" value={this.state.description} onChange={this.handleInput} required /><br />
 
 
                     <label for="website">Website:</label><br />
-                    <input type="text" value={this.state.website} onChange={(event) => this.handleInput(event, 'website')} /><br />
+                    <input name="website" type="text" value={this.state.website} onChange={this.handleInput} required /><br />
 
                     <label for="owner">Are you the owner of this business?</label><br />
-                    <input type="text" value={this.state.owner} onChange={(event) => this.handleInput(event, 'owner')} /><br />
+                    {/* <select name="owner" value={this.state.type} onChange={this.handleInput}>
+                        <option value="yes">yes</option>
+                        <option value="no">no</option> */}
+                    <select name="owner" value={this.state.owner} onChange={this.handleInput}>
+                        <option value="yes">yes</option>
+                        <option value="no">no</option>
+                    </select>
+                    <br />
 
-                    {/* <div class="dropdown">
-                        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-                        <div id="myDropdown" class="dropdown-content">
-                            <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
-                        </div>
-                    </div> */}
                     <label for="type">Type of Business*</label><br />
-                    <input type="text" value={this.state.type} onChange={(event) => this.handleInput(event, 'type')} /><br />
+                    <select name="type" value={this.state.type} onChange={this.handleInput}>
+                        <option value="restaurants">restaurants</option>
+                        <option value="miscellaneous">miscellaneous</option>
+                        <option value="wellnes">wellness</option>
+                        <option value="retail">retail</option>
+                        <option value="professional services">professional services</option>
+                        <option value="marketing and consulting">marketing and consulting</option>
+                        <option value="arts">arts</option>
+                        <option value="health">health</option>
+                        <option value="cosmetology">cosmetology</option>
+                    </select> <br />
 
                     <label for="email">Email*</label><br />
-                    <input type="text" value={this.state.email} onChange={(event) => this.handleInput(event, 'email')} /><br />
+                    <input name="email" type="text" value={this.state.email} onChange={this.handleInput} /><br />
 
 
-                    <label for="zip">Image:</label><br />
-                    <input type="text" value={this.state.image} /><br />
-                    <input type="submit" onClick={this.addRestaurant} />
+                    <label for="zip">Image URL:</label><br />
+                    <input name="imageText" type="text" value={this.state.image} /><br />
+                    <input name="image" type="submit" />
                 </form>
             </div>
         );
