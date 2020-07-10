@@ -54,9 +54,9 @@ class Search extends Component {
         })
     }
 
-    addToNewRestaurant = () => {
+    handleClick2 = () => {
         this.props.history.push('/form');
-
+        console.log('clicked')
     }
 
     render(props) {
@@ -87,6 +87,7 @@ class Search extends Component {
                             </li>
                         ))}
                     </ul>
+                    <div><button onClick={this.handleClick2}>Add Business</button></div>
 
 
                 </div>
