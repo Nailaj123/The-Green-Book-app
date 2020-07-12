@@ -21,11 +21,13 @@ import RestaurantItem from '../RestaurantItem/RestaurantItem';
 import Search from '../Search/Search';
 import NewRestaurantForm from '../NewRestaurantForm/NewRestaurantForm'
 
+
 import './App.css';
+import ListItem from '../ListItem';
 
 class App extends Component {
   componentDidMount() {
-    this.props.dispatch({ type: 'GET_EVERYTHING' })
+    // this.props.dispatch({ type: 'GET_EVERYTHING' })
     this.props.dispatch({ type: 'FETCH_USER' })
   }
 
@@ -61,11 +63,11 @@ class App extends Component {
               path="/search"
               component={Search}
             />
-            <ProtectedRoute
+            {/* <ProtectedRoute
               exact
               path="/api/user"
               component={UserPage}
-            />
+            /> */}
 
             <ProtectedRoute
               exact
@@ -79,7 +81,7 @@ class App extends Component {
             <ProtectedRoute
               exact
               path="/home"
-              component={UserPage}
+              component={ListItem}
             />
             {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the info page instead. */}
