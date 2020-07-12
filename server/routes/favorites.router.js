@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
     const user = req.user.id
     console.log('user', req.user);
     if (req.isAuthenticated()) {
-        let queryText = `SELECT businesses.id, businesses.name, businesses.description, businesses.image, favorites.visited FROM businesses
+        let queryText = `SELECT businesses.id, businesses.name, businesses.description, businesses.image FROM businesses
     JOIN favorites ON favorites.business_id = businesses.id
     JOIN "user" ON favorites.user_id = "user".id where favorites.user_id=$1`;
         pool.query(queryText, [user])

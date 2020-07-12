@@ -1,0 +1,9 @@
+body{
+    background-image: url('s-l640.jpg');
+    background-repeat: no-repeat;
+   background-position: center;  
+  background-attachment: fixed; 
+background-size: auto;
+  text-align: left;
+    /* height: fit-content;  */
+ }

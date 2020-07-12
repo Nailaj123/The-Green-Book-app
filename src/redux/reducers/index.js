@@ -6,6 +6,7 @@ import search from './searchReducer';
 import details from './restaurantItemReducer'
 import favorites from './favoritesReducer';
 import newRestaurant from './newRestaurantReducer';
+import allReducer from './AllReducer';
 
 
 // rootReducer is the primary reducer for our entire project
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   details,
   favorites,
   newRestaurant,
+  allReducer
 
 });
 

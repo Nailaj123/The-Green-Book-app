@@ -68,23 +68,30 @@ class Search extends Component {
                     <input
                         type="text"
                         onChange={this.trackSearchInput}
-                        placeholder="restaurants salons"
+                        placeholder="restaurants arts"
                         value={this.state.searchInput}
                     />
                     <button onClick={this.search}>Search</button>
-                    <ul>
+                    <ul style={{ margin: 'auto' }}>
                         {this.props.search.map(businesses => (
-                            <li key={businesses.id}>
-                                <button class='imagebtn' onClick={() => this.handleClick(businesses.id)}><img height='200px' height='200px' src={businesses.image} /></button>
-                                <br />
-                                {businesses.name}
-                                <br />
-                                {businesses.description}
-                                <br />
-                                {businesses.website}
-                                <br />
-                                <button class='favorite' onClick={() => this.handleClick1(businesses.id)}>Favorite</button>
-                            </li>
+                            <div style={{ backgroundColor: 'white', boxShadow: '10px 10px 5px #AAAAAA', borderRadius: '10px', width: 'min-content', marginTop: '15px', padding: '5px', display: 'in-line-block', marginLeft: 'auto', marginRight: 'auto' }} >
+
+
+                                <li key={businesses.id} >
+                                    {console.log(businesses.image)}
+                                    <button class='imagebtn' onClick={() => this.handleClick(businesses.id)}><img height='200px' height='200px' src={businesses.image} /></button>
+                                    <br />
+                                    <div className='searchName' style={{ textAlign: 'left', width: 'inherit', margin: 'auto' }} >
+                                        {businesses.name}
+                                        <br />
+                                        {businesses.description}
+                                        <br />
+                                        {businesses.website}
+                                        <br />
+                                    </div>
+                                    <button class='favorite' onClick={() => this.handleClick1(businesses.id)}>Favorite</button>
+                                </li>
+                            </div>
                         ))}
                     </ul>
                     <div><button onClick={this.handleClick2}>Add Business</button></div>
@@ -93,6 +100,7 @@ class Search extends Component {
                 </div>
 
             </div>
+
         );
     }
 }
@@ -101,9 +109,6 @@ const mapStateToProps = state => ({
     search: state.search,
     user: state.user
 });
-
-
-
 
 
 

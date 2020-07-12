@@ -13,6 +13,12 @@ function* fetchList(action) {
     yield put({ type: "GET_LIST", payload: filteredData });
 }
 
+function* getAll() {
+    const allResults = yield axios.get('/search');
+    yield put({ type: "GET_ALL", payload: allResults })
+
+}
+
 function filterSearchResults(search, searchWord) {
     if (search.description.search(searchWord) !== -1) {
         return true
@@ -44,6 +50,7 @@ function* editRestaurant(action) {
 }
 
 function* searchSaga() {
+    yield takeLatest('GET_EVERYTHING', getAll)
     yield takeLatest('FETCH_LIST', fetchList);
     yield takeLatest('DELETE_ITEM', deleteRestaurant);
     yield takeLatest('EDIT_ITEM', editRestaurant);

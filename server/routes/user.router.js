@@ -32,6 +32,21 @@ router.post('/register', (req, res, next) => {
 router.post('/login', userStrategy.authenticate('local'), (req, res) => {
   res.sendStatus(200);
 });
+router.get('/', (req, res) => {
+  console.log('req.user:', req.user);
+  console.log('is authenticated?', req.isAuthenticated());
+  if (req.isAuthenticated()) {
+    let queryText = 'select * from businesses'
+    pool.query(queryText)
+      .then(results => res.send(results.rows))
+      .catch(error => {
+        console.log('Error making SELECT for results:', error);
+        res.sendStatus(500);
+      });
+  } else res.sendStatus(403);
+
+});
+
 
 // clear all server session information about this user
 router.post('/logout', (req, res) => {

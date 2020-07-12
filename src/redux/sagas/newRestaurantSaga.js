@@ -2,6 +2,7 @@ import axios from 'axios';
 import { put, takeEvery } from 'redux-saga/effects';
 
 function* newRestaurant(action) {
+    console.log(action.payload)
     try {
         yield axios.post("/form", action.payload);
         console.log('from addrestaurant', action.payload);

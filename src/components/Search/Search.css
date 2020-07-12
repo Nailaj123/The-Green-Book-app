@@ -1,14 +1,25 @@
 div.results {
-    background-color: yellow (243, 233, 233);
+    /* background-color: #FFE4E1 (243, 233, 233); */
     /* height: 600px;
     width: 600px; */
     overflow-y: scroll;
     text-align: center;
-    margin-left: 300px;
+   margin:auto;
 }
+ body{
+    background-image: url('./support1-300x294.jpg');
+    background-repeat: no-repeat;
+   background-position: center;  
+  background-attachment: fixed; 
+  background-size: cover;
+ 
+    /* height: fit-content;  */
+ }
+
 
 div.body{
-    background-color:white;
+    /* background-color: #BC8F8F; */
+    text-align: center;
 }
 
 ul {

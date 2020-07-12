@@ -16,8 +16,8 @@ ul {
     list-style-position: outside;
     list-style-image: element(image);
 }
-
+/*  
 .imagebtn {
-    /* sets border width to 0 and border style to none */ 
-    border:0 none;
-}
+     /* border:0 none;  */
+    /* sets border width to 0 and border style to none */  
+ 

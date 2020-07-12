@@ -52,14 +52,17 @@ class Favorites extends Component {
                 <div class='list'>
                     <h2>Favorites</h2>
                     <ul>
-                        {this.props.favorites.map(listItem => {
+                        {this.props.favorites.map((listItem) => {
                             return (
                                 <li key={listItem.id}>
+                                    {console.log('state', listItem)};
                                     <img src={listItem.image} width='200px' height='200px'></img>
                                     <br />
                                     {listItem.name}
                                     <br />
                                     {listItem.description}
+                                    <br />
+                                    {listItem.website}
                                     <br />
 
                                     {listItem.visited === false &&
@@ -81,5 +84,5 @@ const mapStateToProps = state => ({
     favorites: state.favorites
 });
 
-export default connect(mapStateToProps)(Favorites);
+export default withRouter(connect(mapStateToProps)(Favorites));
 
