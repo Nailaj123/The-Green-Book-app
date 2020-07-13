@@ -10,7 +10,7 @@ class Favorites extends Component {
 
     state = {
         favorite: ""
-    };
+    }
 
 
     componentDidMount() {
@@ -55,7 +55,7 @@ class Favorites extends Component {
                         {this.props.favorites.map((listItem) => {
                             return (
                                 <li key={listItem.id}>
-                                    {console.log('state', listItem)};
+                                    {console.log('state', listItem)}
                                     <img src={listItem.image} width='200px' height='200px'></img>
                                     <br />
                                     {listItem.name}
