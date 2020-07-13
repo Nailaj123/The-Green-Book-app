@@ -11,6 +11,18 @@ class ListItem extends Component {
     componentDidMount() {
         this.props.dispatch({ type: 'GET_EVERYTHING' })
     }
+    handleClick1 = (id) => {
+        const user = this.props.user.id
+        const data = { id, user }
+        this.props.dispatch({ type: 'ADD_TO_FAVORITES', payload: data });
+        alert('added!')
+        // console.log('user', user)
+        // console.log('id', id)
+    }
+    handleClick2 = () => {
+        this.props.history.push('/form');
+        console.log('clicked')
+    }
     render() {
         console.log(this.props.list)
         return (
@@ -33,7 +45,7 @@ class ListItem extends Component {
                                     <br />
                                     {businesses.description}
                                     <br />
-                                    {businesses.website}
+                                    <a target='_blank' href={businesses.website}>visit their website</a>
                                     <br />
                                 </div>
                                 <button class='favorite' onClick={() => this.handleClick1(businesses.id)}>Favorite</button>
@@ -41,6 +53,7 @@ class ListItem extends Component {
                         </div>
                     ))}
                 </ul>
+                <div><button onClick={this.handleClick2}>Add Business</button></div>
 
 
                 <LogOutButton className="log-in" />

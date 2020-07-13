@@ -67,11 +67,13 @@ class Search extends Component {
                     <br />
                     <input
                         type="text"
+
                         onChange={this.trackSearchInput}
                         placeholder="restaurants arts"
                         value={this.state.searchInput}
                     />
                     <button onClick={this.search}>Search</button>
+                    {/* <div><button onClick={this.handleClick2}>Add Business</button></div> */}
                     <ul style={{ margin: 'auto' }}>
                         {this.props.search.map(businesses => (
                             <div style={{ backgroundColor: 'white', boxShadow: '10px 10px 5px #AAAAAA', borderRadius: '10px', width: 'min-content', marginTop: '15px', padding: '5px', display: 'in-line-block', marginLeft: 'auto', marginRight: 'auto' }} >
@@ -86,7 +88,7 @@ class Search extends Component {
                                         <br />
                                         {businesses.description}
                                         <br />
-                                        {businesses.website}
+                                        <a href={businesses.website}>visit their website</a>
                                         <br />
                                     </div>
                                     <button class='favorite' onClick={() => this.handleClick1(businesses.id)}>Favorite</button>
@@ -98,7 +100,6 @@ class Search extends Component {
 
 
                 </div>
-
             </div>
 
         );

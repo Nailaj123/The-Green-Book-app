@@ -14,7 +14,7 @@ class Favorites extends Component {
 
 
     componentDidMount() {
-        this.getFavorites();
+        this.getFavorites()
     }
 
     //function that gets all favorite beers from the server/database
