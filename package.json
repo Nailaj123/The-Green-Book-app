@@ -30,7 +30,6 @@
     "client": "react-scripts start",
     "server": "nodemon --watch server server/server.js",
     "build": "CI= react-scripts build",
-    "test": "jest",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
