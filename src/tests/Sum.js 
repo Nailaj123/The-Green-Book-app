@@ -1,6 +1,0 @@
-
-Const sum = function (value1, value2){
-
-Return value1 + value2;
-}
-module.exports = sum;

@@ -4,10 +4,6 @@ import './AboutPage.css';
 import localBusiness from './couple.jpeg';
 import history from './negro_motorist_green_book_victor_hugo_green.jpg';
 
-// This is one of our simplest components
-// It doesn't have local state, so it can be a function component.
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is, so it doesn't need 'connect()'
 
 const AboutPage = () => (
   <div>

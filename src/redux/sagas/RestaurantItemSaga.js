@@ -19,6 +19,3 @@ function* RestaurantItemSaga() {
 }
 
 export default RestaurantItemSaga
-
-
-

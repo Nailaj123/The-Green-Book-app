@@ -20,7 +20,6 @@ class Search extends Component {
             type: "FETCH_LIST",
             payload: searchString
         });
-        // this.props.history.push("/list");
     };
 
     trackSearchInput = event => {
@@ -41,8 +40,6 @@ class Search extends Component {
         const data = { id, user }
         this.props.dispatch({ type: 'ADD_TO_FAVORITES', payload: data });
         alert('added!')
-        // console.log('user', user)
-        // console.log('id', id)
     }
 
 
